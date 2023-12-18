@@ -107,7 +107,7 @@ function getPasswordOptions() {
 // Function for getting a random element from an array
 function getRandom(arr) {
   for (var i = 0; i < passwordLength.length; i++) {
-    Math.floor(Math.random() * 26)
+    return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 }
 
@@ -129,5 +129,3 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
-console.log(upperCasedCharacters[]);
