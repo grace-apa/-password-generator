@@ -89,41 +89,45 @@ var upperCasedCharacters = [
 ];
 
 // Function to prompt user for password options
-var passwordLength = "";
+userInput = [];
+var passwordLength = 8;
 var lowerCase = "";
 var upperCase = "";
 var specialChar = "";
 var numericNumber = "";
 
 function getPasswordOptions() {
-  var userInput = [];
+  userInput = [];
 
-  var passwordLength = prompt(
-    "How many characters do you want in your password? (Please choose between 8 - 128 characters)"
+  passwordLength = parseInt(
+    prompt(
+      "How many characters do you want in your password? (Please choose between 8 - 128 characters)"
+    )
   );
-  if (isNaN(passwordLength) || passwordLength < 8 || passwordLength > 128) {
+  if (passwordLength < 8 || passwordLength > 128) {
     alert("Your character length has to be between 8-128. Please try again!");
     return false;
   }
-  var lowerCase = confirm(
+
+  lowerCase = confirm(
     "Would you like to include lowercase characters within your password?"
   );
   if (lowerCase) {
     userInput += lowerCasedCharacters.join("");
   }
-  var upperCase = confirm(
+  upperCase = confirm(
     "Would you like to include UPPERCASE characters within your password?"
   );
   if (upperCase) {
     userInput += upperCasedCharacters.join("");
   }
-  var specialChar = confirm(
+  specialChar = confirm(
     "Would you like to include special characters within your password?"
   );
   if (specialChar) {
     userInput += specialCharacters.join("");
   }
-  var numericNumber = confirm(
+  numericNumber = confirm(
     "Would you like to include numbers within your password?"
   );
   if (numericNumber) {
@@ -133,9 +137,8 @@ function getPasswordOptions() {
 }
 
 // Function for getting a random element from an array
-
 function getRandom() {
-  password = "";
+  var password = "";
   for (var i = 0; i < passwordLength.length; i++) {
     var getPassword =
       Math.floor(Math.random() * userInput.length(max - min + 1)) + min;
@@ -157,6 +160,8 @@ function writePassword() {
     // if I return true//
     var newPassword = generatePassword();
     passwordText.value = newPassword;
+  } else {
+    passwordText.value = "";
   }
 }
 
