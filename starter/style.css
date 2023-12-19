@@ -123,6 +123,7 @@ button[disabled] {
   border-radius: 6px;
   resize: none;
   overflow: hidden;
+  color: white;
 }
 
 @media (max-width: 690px) {
@@ -134,6 +135,7 @@ button[disabled] {
 
   #password {
     font-size: 1rem;
+    color: white;
   }
 }
 
