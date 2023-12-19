@@ -97,15 +97,27 @@ var specialChar = "";
 
 function getPasswordOptions() {
   var passwordLength = prompt(
-    "How many characters do you want in your password? (Please choose between 8-128 characters)"
+    "How many characters do you want in your password? (Please choose between 8 - 128 characters)"
   );
   var lowerCasedCharacters = confirm(
-    "Would you like to include lowercase chracters within your password?"
+    "Would you like to include lowercase characters within your password?"
+  );
+  var upperCasedCharacters = confirm(
+    "Would you like to include UPPERCASE characters within your password?"
+  );
+  var specialCharacters = confirm(
+    "Would you like to include special characters within your password?"
   );
 }
 
+var sumArray = numericCharacters
+  .concat(lowerCasedCharacters)
+  .concat(upperCasedCharacters)
+  .concat(specialCharacters);
+
 // Function for getting a random element from an array
-function getRandom(arr) {
+
+function getRandom(min, max) {
   for (var i = 0; i < passwordLength.length; i++) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
