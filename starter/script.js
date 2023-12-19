@@ -88,7 +88,7 @@ var upperCasedCharacters = [
   "Z",
 ];
 
-// Function to prompt user for password options
+// Defined variables below:
 var passwordLength = 0;
 var lowerCase = "";
 var upperCase = "";
@@ -97,6 +97,7 @@ var numericNumber = "";
 var userInput = [""];
 var endPassword = [""];
 
+// Function to prompt user for password options
 function getPasswordOptions() {
   passwordLength = prompt(
     "How many characters do you want in your password? (Please choose between 8 - 128 characters)"
@@ -156,38 +157,3 @@ function writePassword() {
 }
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
-// original code:
-
-// // Function for getting a random element from an array
-// function getRandom(arr) {
-//   return arr[Math.floor(Math.random() * arr.length)];
-//   // var password = "";
-//   // for (var i = 0; i < passwordLength.length; i++) {
-//   //   var getPassword =
-//   // Math.floor(Math.random() * userInput.length(max - min + 1)) + min;
-//   // password = password + userInput[getPassword];
-// }
-// // return password;
-
-// // Get references to the #generate element
-// var generateBtn = document.querySelector("#generate");
-
-// // Write password to the #password input
-// function writePassword() {
-//   var finalOptions = getPasswordOptions();
-//   var passwordText = document.querySelector("#password");
-// }
-
-// endPassword = [""];
-
-// // Function to generate password with user input
-// function generatePassword() {
-//   for (i = 0; i < passwordLength; i++) {
-//     endPassword += getRandom(userInput);
-//   }
-//   return endPassword;
-// }
-
-// // Add event listener to generate button
-// generateBtn.addEventListener("click", writePassword);
