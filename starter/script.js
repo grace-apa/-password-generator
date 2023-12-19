@@ -99,6 +99,10 @@ function getPasswordOptions() {
   var passwordLength = prompt(
     "How many characters do you want in your password? (Please choose between 8 - 128 characters)"
   );
+  if (passwordLength < 8 || passwordLength > 120) {
+    alert("Your character length has to be between 8-128. Please try again!");
+    return false;
+  }
   var lowerCasedCharacters = confirm(
     "Would you like to include lowercase characters within your password?"
   );
@@ -131,7 +135,7 @@ function getRandom(arr) {
 
 // Function to generate password with user input
 function generatePassword() {
-  var options = getPasswordOptions();
+  var password = getPasswordOptions();
 }
 
 // Get references to the #generate element
