@@ -18,3 +18,17 @@ Live demo: https://grace-apa.github.io/-password-generator/
 # Screenshot
 
 ![alt text](./assets/generatepassword1.png)
+
+![alt text](./assets/image2.png)
+
+![alt text](./assets/image3.png)
+
+![alt text](./assets/image4.png)
+
+![alt text](./assets/image5.png)
+
+![alt text](./assets/image6.png)
+
+# License
+
+MIT License
