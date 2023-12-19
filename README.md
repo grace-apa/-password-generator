@@ -11,7 +11,7 @@ Using intermediate JavaScript, I have created an application that generates a pa
 
 - Character types: lowercase, uppercase, numeric and special characters ($@%&\*, etc.)
 
-Once all prompts are answered, the password should be generated and displayed in an alert or written to the page.
+Once all prompts are answered, the password will be generated and displayed on the page.
 
 Live demo: https://grace-apa.github.io/-password-generator/
 
