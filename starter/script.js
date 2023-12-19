@@ -92,41 +92,45 @@ var upperCasedCharacters = [
 var passwordLength = "";
 var lowerCase = "";
 var upperCase = "";
-var numericNumber = "";
 var specialChar = "";
+var numericNumber = "";
 
 function getPasswordOptions() {
+  var userInput = "";
+
   var passwordLength = prompt(
     "How many characters do you want in your password? (Please choose between 8 - 128 characters)"
   );
-  if (passwordLength < 8 || passwordLength > 120) {
+  if (passwordLength < 8 || passwordLength > 128) {
     alert("Your character length has to be between 8-128. Please try again!");
     return false;
   }
-  var lowerCasedCharacters = confirm(
+  var lowerCase = confirm(
     "Would you like to include lowercase characters within your password?"
   );
-  if (lowerCasedCharacters) {
+  if (lowerCase) {
     userInput += lowerCasedCharacters.join("");
   }
-  var upperCasedCharacters = confirm(
+  var upperCase = confirm(
     "Would you like to include UPPERCASE characters within your password?"
   );
-  if (upperCasedCharacters) {
+  if (upperCase) {
     userInput += upperCasedCharacters.join("");
   }
-  var specialCharacters = confirm(
+  var specialChar = confirm(
     "Would you like to include special characters within your password?"
   );
-  if (specialCharacters) {
+  if (specialChar) {
     userInput += specialCharacters.join("");
   }
+  var numericNumber = confirm(
+    "Would you like to include numbers within your password?"
+  );
+  if (numericNumber) {
+    userInput += numericCharacters.join("");
+  }
+  return userInput;
 }
-
-// var sumArray = numericCharacters
-//   .concat(lowerCasedCharacters)
-//   .concat(upperCasedCharacters)
-//   .concat(specialCharacters);
 
 // Function for getting a random element from an array
 
