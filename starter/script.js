@@ -106,12 +106,21 @@ function getPasswordOptions() {
   var lowerCasedCharacters = confirm(
     "Would you like to include lowercase characters within your password?"
   );
+  if (lowerCasedCharacters) {
+    userInput += lowerCasedCharacters.join("");
+  }
   var upperCasedCharacters = confirm(
     "Would you like to include UPPERCASE characters within your password?"
   );
+  if (upperCasedCharacters) {
+    userInput += upperCasedCharacters.join("");
+  }
   var specialCharacters = confirm(
     "Would you like to include special characters within your password?"
   );
+  if (specialCharacters) {
+    userInput += specialCharacters.join("");
+  }
 }
 
 // var sumArray = numericCharacters
