@@ -110,18 +110,24 @@ function getPasswordOptions() {
   );
 }
 
-var sumArray = numericCharacters
-  .concat(lowerCasedCharacters)
-  .concat(upperCasedCharacters)
-  .concat(specialCharacters);
+// var sumArray = numericCharacters
+//   .concat(lowerCasedCharacters)
+//   .concat(upperCasedCharacters)
+//   .concat(specialCharacters);
 
 // Function for getting a random element from an array
 
-function getRandom(min, max) {
-  for (var i = 0; i < passwordLength.length; i++) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
+function getRandom(arr) {
+  for (var i = 0; i < arr.length; i++) {
+    var getPassword = Math.floor(Math.random() * (max - min + 1)) + min;
+    return arr[getPassword];
   }
 }
+
+// getRandom(specialCharacters);
+// getRandom(numericCharacters);
+// getRandom(lowerCasedCharacters);
+// getRandom(upperCasedCharacters);
 
 // Function to generate password with user input
 function generatePassword() {
