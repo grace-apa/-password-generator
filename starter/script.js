@@ -96,12 +96,12 @@ var specialChar = "";
 var numericNumber = "";
 
 function getPasswordOptions() {
-  var userInput = "";
+  var userInput = [];
 
   var passwordLength = prompt(
     "How many characters do you want in your password? (Please choose between 8 - 128 characters)"
   );
-  if (passwordLength < 8 || passwordLength > 128) {
+  if (isNaN(passwordLength) || passwordLength < 8 || passwordLength > 128) {
     alert("Your character length has to be between 8-128. Please try again!");
     return false;
   }
@@ -134,32 +134,35 @@ function getPasswordOptions() {
 
 // Function for getting a random element from an array
 
-function getRandom(arr) {
-  for (var i = 0; i < arr.length; i++) {
-    var getPassword = Math.floor(Math.random() * (max - min + 1)) + min;
-    return arr[getPassword];
+function getRandom() {
+  password = "";
+  for (var i = 0; i < passwordLength.length; i++) {
+    var getPassword =
+      Math.floor(Math.random() * userInput.length(max - min + 1)) + min;
+    password = password + userInput[getPassword];
   }
-}
-
-// getRandom(specialCharacters);
-// getRandom(numericCharacters);
-// getRandom(lowerCasedCharacters);
-// getRandom(upperCasedCharacters);
-
-// Function to generate password with user input
-function generatePassword() {
-  var password = getPasswordOptions();
+  return password;
 }
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
+getPasswordOptions();
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
+  var finalOptions = getPasswordOptions();
   var passwordText = document.querySelector("#password");
 
-  passwordText.value = password;
+  if (finalOptions) {
+    // if I return true//
+    var newPassword = generatePassword();
+    passwordText.value = newPassword;
+  }
+}
+
+// Function to generate password with user input
+function generatePassword() {
+  var password = getPasswordOptions();
 }
 
 // Add event listener to generate button
